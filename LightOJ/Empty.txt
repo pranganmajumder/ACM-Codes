@@ -1,1 +1,8 @@
 this is just for create a new file
+to create a folder under a repository ::
+
+such as i create LightOJ under ACM-Codes::
+
+LightOJ/
+
+then u have to create a demo file such as Empty.txt under LightOj
