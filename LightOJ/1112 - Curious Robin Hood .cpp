@@ -1,0 +1,106 @@
+
+/**OOO**/
+#include<bits/stdc++.h>
+typedef long long int ll;
+typedef unsigned long long ull;
+using namespace std;
+
+
+#define mems(arr,VAL)           memset(arr,VAL,sizeof(arr))
+#define pii                     pair<int,int>
+#define mk                      make_pair
+#define pb                      push_back
+#define ff                      first
+#define ss                      second
+
+#define pf                      printf
+#define sc                      scanf
+#define inf                     100000000
+#define mx                      100005
+
+ll arr[mx],tree[mx*3];
+
+void createTree(int node,int lo,int hi)
+{
+    if(lo==hi){
+        tree[node]=arr[lo];
+        return ;
+    }
+    int left=node*2;
+    int right=left+1;
+    int mid=(lo+hi)/2;
+
+    createTree(left,lo,mid);
+    createTree(right,mid+1,hi);
+    tree[node]=tree[left]+tree[right];
+}
+
+ll query(int node,int lo,int hi,int i,int j)
+{
+    if(lo>=i&&hi<=j)return tree[node];
+    if(hi<i||lo>j)return 0;
+
+    int left=node*2;
+    int right=left+1;
+    int mid=(lo+hi)/2;
+
+    ll p1=query(left,lo,mid,i,j);
+    ll p2=query(right,mid+1,hi,i,j);
+
+    return p1+p2;
+}
+
+void update(int node,int lo,int hi,int i,int newValue)
+{
+    if(lo>i||hi<i)return ;
+    if(lo==hi){
+        tree[node]+=newValue;
+        arr[lo]+=newValue;
+        return ;
+    }
+    int left=node*2;
+    int right=left+1;
+    int mid=(lo+hi)/2;
+    update(left,lo,mid,i,newValue);
+    update(right,mid+1,hi,i,newValue);
+    tree[node]=tree[left]+tree[right];
+}
+
+int main()
+{
+    ll t,cas=1;
+    sc("%lld",&t);
+while(t--)
+{
+    ll n,q,i,j,v,type;
+    sc("%lld%lld",&n,&q);
+
+    for(i=1;i<=n;i++)
+        sc("%lld",&arr[i]);
+    createTree(1,1,n);//Create Tree//
+
+
+
+                                    /**operation start from here **/
+    printf("Case %lld:\n",cas++);
+    while(q--){
+        sc("%lld",&type);
+        if(type==1){
+            sc("%lld",&i);
+            pf("%lld\n",arr[i+1]);//give all money of arr[i+1] as i=0 bassed index
+            update(1,1,n,i+1,-arr[i+1]);//now update the ith index with 0
+        }
+        else if(type==2){
+            sc("%lld%lld",&i,&v);
+            update(1,1,n,i+1,v);
+        }
+        else if(type==3){
+            sc("%lld%lld",&i,&j);
+            ll res=query(1,1,n,i+1,j+1);
+            pf("%lld\n",res);
+        }
+    }
+
+}
+return 0;
+}
