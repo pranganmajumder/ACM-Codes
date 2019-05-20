@@ -6,7 +6,7 @@
 ==>> bappy dp problem light oj 
 1166
 1086
-
+bappy dp problem == from a game find winner using dp if they play optimaly
 
 light oj = segment tree binary simulation 1080
 
@@ -34,3 +34,9 @@ string Hasing problem : spoj ADACLEAN
 
 2D graph problem ::: Hasan Kamrul
 
+Learn ==============>>>>>>>>>
+1. string hashing
+2. minimum spanning Tree
+
+
+div3 problem F2 : https://codeforces.com/contest/1165/problem/F2
