@@ -52,10 +52,10 @@ ll nod(ll n)
                 n/=Prime[i];
                 c++;
             }
-            res = res* (2*c + 1);
+            res = res* (2*c + 1);//as n is a perfect square 
         }
     }
-    if(n>1)res = res * 3;
+    if(n>1)res = res * 3;//as n is a perfect square
     return res;
 }
 
