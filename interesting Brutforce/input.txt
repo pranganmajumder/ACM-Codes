@@ -3,3 +3,5 @@
 https://paste.ubuntu.com/p/2wfpVdBBDp/?fbclid=IwAR0IONa58oboCSpW-Izp7IT3HthtARkUMJf0ILZCCR0y4HbvI77Yx2D4zkU
 
 https://pastebin.com/53ZNDBc1?fbclid=IwAR3pUNyrnaKLISzsCaa6FM5hoSPTp_j5FX6uZOLQXgy4DF9oEBA4zle9R3I
+
+stringstream : https://www.hackerrank.com/challenges/c-tutorial-stringstream/forum
