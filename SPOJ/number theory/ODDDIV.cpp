@@ -66,7 +66,7 @@ ll k,l,h,T,cnt;
 int main()
 {
 
-    sieve(1e5+10);//it will work if your given_input<=1e12
+    sieve(1e5+10);//generate prime upto 1e5
 
     for(ll i=1;i<=100000;i++){
         ll d = nod(i);//it actually return number of divisor i*i;
