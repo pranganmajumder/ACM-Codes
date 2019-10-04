@@ -39,19 +39,19 @@ int fun( int row , int col , int dir )//dir(0) = soja , dir (-1) upore , dir (+1
     if( dp[row][col][dir] != -1 )return dp[row][col][dir];
 
     int r = 0;
-    if(s[row][col] == '1' || s[row][col] == '2'){/**zodi cell a 1/2 thake**/
-        if(dir == 0)r+=fun(row , col+1 , 0 );/**& soja pechon theke asle samner col a cole zabe && direction same thake**/
-        else r += 0; /** but jodi oi cell a niche / upore theke asle samne ar zaite parbe na tai 0 return kore dite hobe**/
+    if(s[row][col] == '1' || s[row][col] == '2'){/**zodi current cell a 1/2 thake**/
+        if(dir == 0)r+=fun(row , col+1 , 0 );/**soja pechon theke asle samner col a cole zabe tai  direction ager tai thakbe**/
+        else r += 0; /** but jodi current cell a niche / upore theke asle samne ar zaite parbe na tai 0 return kore dite hobe**/
     }
-    else{/**zodi oi cell a 3,4,5,6 thake **/
+    else{/**zodi current cell a 3,4,5,6 thake **/
         if(dir == 0){/**zodi soja pechon theke ase **/
-            if(row == 0)/**current cell ar row uporer row hole **/
+            if(row == 0)/**current cell uporer row te hole **/
                 r+=fun(row+1 , col , 1 );/** same column ar nicher row te cole zabe tai  dir (+1) niye zabe **/
             else if(row == 1)/**current cell ar row nicer ta hole**/
                 r+=fun(row-1 , col , -1);/**same col ar uporer row te cole zabe tai dir(-1) niye zabe **/
         }
-        else if(dir == -1 || dir == +1){/**zodi oi cell a niche / upor theke ase **/
-                r+=fun(row , col+1 , 0);/**tahole  just samner column a cole cole zabe soja , since soja tai dir(0) nia zabe **/
+        else if(dir == -1 || dir == +1){/**zodi current cell a niche / upor theke ase **/
+                r+=fun(row , col+1 , 0);/**tahole  just samner column a cole cole zabe soja , zehetu soja,  tai dir(0) nia zabe **/
         }
     }
 
