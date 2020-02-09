@@ -1,5 +1,6 @@
-#include<bits/stdc++.h>
+/**     https://paste.ubuntu.com/p/3tTnwZ8hsx/    **/
 
+#include<bits/stdc++.h>
 typedef long long int LL ;
 #define NMAX       110
 #define pb          push_back
