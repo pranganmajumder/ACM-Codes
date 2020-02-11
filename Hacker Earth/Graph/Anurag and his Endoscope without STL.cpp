@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+/** shar vai  code   https://paste.ubuntu.com/p/Sy7vYWsD4p/   **/
 using namespace std ;
 
 int T , N , M ,  R , C ,  L , greed[1005][1005] , head , tail  , tot , visited[1005][1005] ;
