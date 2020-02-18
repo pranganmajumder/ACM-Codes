@@ -28,8 +28,8 @@ LL  fun(int mask)
 
     LL price , ans = 1<< 28 ;
     for(int i = 0 ; i<n ; i++){
-        price = greed[i][i] ; // price of i
         if(Check(mask , i ) == 0 ) { // if ith not buy , akn i kinbo
+            price = greed[i][i] ; // price of i
             for(int j = 0 ; j<n ; j++){ // baki sob element dekho , kena hoyeche kina
                 if(Check(mask , j) == 1){ // ager kena thakle , i ar original price ar sathe , j ar surcharge add koro
                     price+=greed[i][j] ; // add surcharges greed[i][j]
